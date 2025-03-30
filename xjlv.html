@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跨星际高铁 - 未来交通新纪元</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background-color: #0a0a1a;
+            color: #e0e0e0;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1a1a3a 0%, #0a0a1a 100%);
+        }
+        
+        .card-glass {
+            background: rgba(15, 15, 35, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .card-glass:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 255, 255, 0.2);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(90deg, #00ffff, #0088ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .border-gradient {
+            border-image: linear-gradient(90deg, #00ffff, #0088ff) 1;
+        }
+        
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #00ffff;
+            border: 3px solid #0088ff;
+        }
+        
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="fixed w-full z-50 bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-gradient">跨星际高铁</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#intro" class="text-white hover:text-cyan-300 transition">项目简介</a>
+                    <a href="#tech" class="text-white hover:text-cyan-300 transition">核心技术</a>
+                    <a href="#timeline" class="text-white hover:text-cyan-300 transition">发展历程</a>
+                    <a href="#future" class="text-white hover:text-cyan-300 transition">未来展望</a>
+                </div>
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄模块 -->
+    <section class="hero-gradient min-h-screen flex items-center justify-center pt-20 pb-32 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-20">
+            <div class="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
+        </div>
+        
+        <div class="container mx-auto relative z-10 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white">
+                <span class="text-gradient">跨星际高铁</span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-medium mb-8 text-cyan-200">连接星球，连接未来</h2>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-10 text-gray-300 leading-relaxed">
+                人类历史上最宏大的交通工程，将彻底改变星际旅行方式。跨星际高铁系统利用突破性技术，实现地球与太阳系内主要行星、卫星之间的快速、安全、经济的人员与物资运输。
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#intro" class="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-full hover:shadow-lg hover:shadow-cyan-500/30 transition-all">
+                    探索项目
+                </a>
+                <a href="#future" class="px-8 py-3 border-2 border-cyan-400 text-cyan-300 font-medium rounded-full hover:bg-cyan-900/30 transition-all">
+                    未来愿景
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator">
+            <a href="#intro" class="text-white animate-bounce inline-block">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 项目简介 -->
+    <section id="intro" class="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+                    <span class="text-gradient">革命性的星际交通</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                    跨星际高铁系统是人类迈向星际文明的关键基础设施，它将彻底改变我们对距离和时间的认知。
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-glass p-8 rounded-xl">
+                    <div class="text-cyan-400 text-4xl mb-4">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">超高速运输</h3>
+                    <p class="text-gray-400">
+                        利用量子隧道技术和曲率引擎，实现地球到火星仅需48小时，比传统航天器快100倍。
+                    </p>
+                </div>
+                
+                <div class="card-glass p-8 rounded-xl">
+                    <div class="text-blue-400 text-4xl mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">极致安全</h3>
+                    <p class="text-gray-400">
+                        多重防护系统确保乘客安全，包括量子力场护盾、陨石预警系统和应急逃生舱。
+                    </p>
+                </div>
+                
+                <div class="card-glass p-8 rounded-xl">
+                    <div class="text-purple-400 text-4xl mb-4">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">生态友好</h3>
+                    <p class="text-gray-400">
+                        零碳排放设计，使用暗物质能源和太阳能，对星际环境几乎无影响。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-16 grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative rounded-xl overflow-hidden hover-scale">
+                    <img src="https://images.unsplash.com/photo-1454789548928-9efd52dc4031?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80" 
+                         alt="星际高铁概念图" 
+                         class="w-full h-auto rounded-xl shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                        <div>
+                            <h4 class="text-white text-xl font-bold">火星站概念设计</h4>
+                            <p class="text-gray-300">奥林匹斯山基地站，2150年建成</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">重新定义星际旅行</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        跨星际高铁不是简单的交通工具，而是连接人类文明的纽带。它将使星际移民、资源开发和科学研究变得前所未有的便捷。
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-cyan-400 mt-1 mr-3"></i>
+                            <span class="text-gray-300">每日多班次，票价仅为传统航天的1/10</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-cyan-400 mt-1 mr-3"></i>
+                            <span class="text-gray-300">舒适客舱设计，模拟地球重力环境</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-cyan-400 mt-1 mr-3"></i>
+                            <span class="text-gray-300">货运专列支持大宗物资运输</span>
+                        </li>
+                    </ul>
+                    <button class="mt-6 px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full hover:shadow-lg transition-all">
+                        了解更多 <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心技术 -->
+    <section id="tech" class="py-20 px-6 bg-gray-900">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+                    <span class="text-gradient">突破性技术</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                    跨星际高铁融合了人类最前沿的科技成就，这些创新技术共同构建了这一宏伟工程的基础。
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-6 mb-16">
+                <div class="card-glass p-6 rounded-xl hover-scale">
+                    <div class="text-cyan-400 text-3xl mb-3">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white">量子隧道驱动</h3>
+                    <p class="text-sm text-gray-400">
+                        通过创建微观虫洞网络，实现点对点瞬间转移，大幅缩短星际旅行时间。
+                    </p>
+                </div>
+                
+                <div class="card-glass p-6 rounded-xl hover-scale">
+                    <div class="text-blue-400 text-3xl mb-3">
+                        <i class="fas fa-space-shuttle"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white">曲率引擎</h3>
+                    <p class="text-sm text-gray-400">
+                        弯曲前方空间，扩展后方空间，使列车在不违背相对论的情况下超光速移动。
+                    </p>
+                </div>
+                
+                <div class="card-glass p-6 rounded-xl hover-scale">
+                    <div class="text-purple-400 text-3xl mb-3">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white">量子力场护盾</h3>
+                    <p class="text-sm text-gray-400">
+                        抵御宇宙射线、微陨石和太阳风暴，保护乘客和列车免受太空环境危害。
+                    </p>
+                </div>
+                
+                <div class="card-glass p-6 rounded-xl hover-scale">
+                    <div class="text-green-400 text-3xl mb-3">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white">闭环生态系统</h3>
+                    <p class="text-sm text-gray-400">
+                        完全自给自足的生命支持系统，水、空气和食物循环利用率达99.9%。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="bg-black bg-opacity-50 rounded-2xl overflow-hidden border border-gray-800">
+                <div class="grid md:grid-cols-2">
+                    <div class="p-8 md:p-12">
+                        <h3 class="text-2xl font-bold mb-4 text-white">轨道网络设计</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            跨星际高铁轨道不是传统的物理轨道，而是由量子锚点构成的引力通道网络。这些锚点部署在行星轨道和拉格朗日点上，形成稳定的空间走廊。
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm">引力稳定技术</span>
+                            <span class="px-3 py-1 bg-blue-900/50 text-blue-300 rounded-full text-sm">空间折叠</span>
+                            <span class="px-3 py-1 bg-purple-900/50 text-purple-300 rounded-full text-sm">量子通讯</span>
+                        </div>
+                    </div>
+                    <div class="relative min-h-64">
+                        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1611&q=80" 
+                             alt="星际轨道网络" 
+                             class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 发展历程 -->
+    <section id="timeline" class="py-20 px-6 bg-gradient-to-b from-gray-900 to-black">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+                    <span class="text-gradient">发展历程</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                    从构想到现实，跨星际高铁项目凝聚了几代科学家和工程师的心血。
+                </p>
+            </div>
+            
+            <div class="relative max-w-3xl mx-auto">
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-cyan-500 to-blue-600"></div>
+                
+                <div class="space-y-8">
+                    <div class="relative timeline-item pl-10 md:pl-0 md:grid md:grid-cols-2 md:gap-8">
+                        <div class="md:text-right md:pr-8 pb-4 md:pb-0">
+                            <h3 class="text-xl font-bold text-white">2045年</h3>
+                            <p class="text-cyan-300 font-medium">量子隧道效应验证</p>
+                        </div>
+                        <div class="md:pl-8 md:border-l-0 border-l-2 border-l-cyan-500 md:border-t-2 md:border-t-cyan-500 pt-1 md:pt-0 pl-6">
+                            <p class="text-gray-400">
+                                欧洲核子研究中心首次实现宏观物体的量子隧道传输，为星际高铁奠定理论基础。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative timeline-item pl-10 md:pl-0 md:grid md:grid-cols-2 md:gap-8">
+                        <div class="md:text-right md:pr-8 pb-4 md:pb-0">
+                            <h3 class="text-xl font-bold text-white">2062年</h3>
+                            <p class="text-cyan-300 font-medium">曲率引擎原型机测试</p>
+                        </div>
+                        <div class="md:pl-8 md:border-l-0 border-l-2 border-l-cyan-500 md:border-t-2 md:border-t-cyan-500 pt-1 md:pt-0 pl-6">
+                            <p class="text-gray-400">
+                                美国NASA与SpaceX合作完成首次载人曲率飞行测试，实现0.1倍光速。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative timeline-item pl-10 md:pl-0 md:grid md:grid-cols-2 md:gap-8">
+                        <div class="md:text-right md:pr-8 pb-4 md:pb-0">
+                            <h3 class="text-xl font-bold text-white">2078年</h3>
+                            <p class="text-cyan-300 font-medium">地球-月球试验线开通</p>
+                        </div>
+                        <div class="md:pl-8 md:border-l-0 border-l-2 border-l-cyan-500 md:border-t-2 md:border-t-cyan-500 pt-1 md:pt-0 pl-6">
+                            <p class="text-gray-400">
+                                首条跨星际高铁试验线开通，地球到月球仅需15分钟，票价5000美元。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative timeline-item pl-10 md:pl-0 md:grid md:grid-cols-2 md:gap-8">
+                        <div class="md:text-right md:pr-8 pb-4 md:pb-0">
+                            <h3 class="text-xl font-bold text-white">2085年</h3>
+                            <p class="text-cyan-300 font-medium">火星支线建设启动</p>
+                        </div>
+                        <div class="md:pl-8 md:border-l-0 border-l-2 border-l-cyan-500 md:border-t-2 md:border-t-cyan-500 pt-1 md:pt-0 pl-6">
+                            <p class="text-gray-400">
+                                国际太空联盟批准跨星际高铁火星支线建设计划，预计投资2.5万亿太空币。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative timeline-item pl-10 md:pl-0 md:grid md:grid-cols-2 md:gap-8">
+                        <div class="md:text-right md:pr-8 pb-4 md:pb-0">
+                            <h3 class="text-xl font-bold text-white">2099年</h3>
+                            <p class="text-cyan-300 font-medium">太阳系网络初步建成</p>
+                        </div>
+                        <div class="md:pl-8 md:border-l-0 border-l-2 border-l-cyan-500 md:border-t-2 md:border-t-cyan-500 pt-1 md:pt-0 pl-6">
+                            <p class="text-gray-400">
+                                连接地球、月球、火星、木星卫星和土星环的星际高铁网络初步建成，人类正式进入星际文明时代。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 未来展望 -->
+    <section id="future" class="py-20 px-6 bg-black">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+                    <span class="text-gradient">未来展望</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                    跨星际高铁不仅是交通工具，更是开启人类文明新纪元的钥匙。
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-2xl font-bold mb-4 text-white">星际经济圈</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        跨星际高铁将彻底改变太阳系经济格局。地球的高科技产品、火星的稀有矿产、木星卫星的水资源、土星环的氦-3燃料将在高铁网络支持下自由流通。
+                    </p>
+                    <div class="bg-gray-900 rounded-lg p-6 border border-gray-800">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-cyan-900/50 flex items-center justify-center text-cyan-400 mr-4">
+                                <i class="fas fa-chart-line text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">经济预测</h4>
+                                <p class="text-sm text-gray-400">2150年数据</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <div class="text-2xl font-bold text-cyan-400">12.8%</div>
+                                <div class="text-xs text-gray-400">年经济增长率</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-blue-400">3.2亿</div>
+                                <div class="text-xs text-gray-400">年客运量</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-purple-400">85%</div>
+                                <div class="text-xs text-gray-400">货运占比</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 md:order-2 relative rounded-xl overflow-hidden hover-scale">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" 
+                         alt="星际经济" 
+                         class="w-full h-auto rounded-xl shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                        <div>
+                            <h4 class="text-white text-xl font-bold">星际贸易中心</h4>
+                            <p class="text-gray-300">火星奥林匹斯山自由贸易区</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-r from-cyan-900/50 to-blue-900/50 rounded-2xl p-8 md:p-12 border border-cyan-800/50">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 text-white">加入星际时代</h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            现在预订2150年前的星际高铁车票，可享受创始会员优惠。成为首批星际公民，参与人类最伟大的冒险。
+                        </p>
+                        <button class="px-8 py-3 bg-white text-cyan-900 font-bold rounded-full hover:bg-cyan-200 transition-all">
+                            立即注册 <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="relative w-64 h-64">
+                            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541873676-a18131494184?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1436&q=80')] bg-cover bg-center rounded-full border-4 border-cyan-400 shadow-xl hover-scale"></div>
+                            <div class="absolute -bottom-4 -right-4 bg-black px-4 py-2 rounded-full border border-cyan-400 text-cyan-300 font-bold">
+                                创始会员卡
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 py-12 px-6 border-t border-gray-800">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4 text-gradient">跨星际高铁</h4>
+                    <p class="text-gray-400 mb-4">
+                        连接星球，连接未来。人类星际文明的基石。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-cyan-400 transition">
+                            <i class="fab fa-weibo text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition">
+                            <i class="fab fa-weixin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-purple-400 transition">
+                            <i class="fab fa-tiktok text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-red-400 transition">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-white">快速链接</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-cyan-400 transition">车票预订</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-cyan-400 transition">货运服务</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-cyan-400 transition">站点地图</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-cyan-400 transition">时刻表</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-white">关于我们</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-cyan-400 transition">公司简介</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-cyan-400 transition">技术团队</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-cyan-400 transition">合作伙伴</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-cyan-400 transition">招贤纳士</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-white">联系我们</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-cyan-400"></i>
+                            <span>地球总部：上海浦东星际大厦88层</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-2 text-cyan-400"></i>
+                            <span>400-888-XXXX</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-cyan-400"></i>
+                            <span>contact@interstellar-rail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+                <p>© 2150 跨星际高铁公司 版权所有 | 沪ICP备XXXXXX号-8 | 沪公网安备XXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-cyan-600 rounded-full flex items-center justify-center text-white shadow-lg opacity-0 invisible transition-all">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // 返回顶部按钮
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 响应式导航菜单
+        const mobileMenuButton = document.querySelector('.md\\:hidden');
+        const navLinks = document.querySelector('.md\\:flex');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+            navLinks.classList.toggle('flex-col');
+            navLinks.classList.toggle('absolute');
+            navLinks.classList.toggle('top-16');
+            navLinks.classList.toggle('left-0');
+            navLinks.classList.toggle('right-0');
+            navLinks.classList.toggle('bg-black');
+            navLinks.classList.toggle('bg-opacity-90');
+            navLinks.classList.toggle('p-6');
+            navLinks.classList.toggle('space-y-4');
+            navLinks.classList.toggle('space-x-8');
+        });
+    </script>
+</body>
+</html>
